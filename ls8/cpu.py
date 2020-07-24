@@ -109,7 +109,7 @@ class CPU:
 
         print()
 
-#! Day 1: Step 3: Implement the core of `CPU`'s `run()` method
+#! Implement the core of `CPU`'s `run()` method
     def run(self):
         """Run the CPU."""
 
