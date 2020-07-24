@@ -38,20 +38,22 @@ In this code challenge, you will add _conditional jumps_ (AKA _conditional branc
 
 Options for submission, whichever is easier for you:
 
-* Copy your source into this repo, or...
+- Copy your source into this repo, or...
 
-* Submit a PR for the Sprint Challenge from the `Computer-Architecture` repo
+- Submit a PR for the Sprint Challenge from the `Computer-Architecture` repo
   you've been using all along.
 
 ## Minimum Viable Product
 
 Your finished project must include all of the following requirements:
 
-- [ ] Add the `CMP` instruction and `equal` flag to your LS-8.
+- [ ] Add the `CMP` (compare) instruction and `equal` (e) flag to your LS-8.
 
-- [ ] Add the `JMP` instruction.
+- [ ] Add the `JMP` instruction. (Jump to the address stored in the given register.)
 
-- [ ] Add the `JEQ` and `JNE` instructions.
+- [ ] Add
+      `JEQ`(If equal flag is set (true), jump to the address stored in the given register.0
+      `JNE` (If E flag is clear (false, 0), jump to the address stored in the given register.)
 
 [See the LS-8 spec for details](https://github.com/LambdaSchool/Computer-Architecture/blob/master/LS8-spec.md)
 
@@ -172,3 +174,32 @@ can deliver on the following optional goals:
 - [ ] Add an `ADDI` extension instruction to add an immediate value to a register
 - [ ] Add timer interrupts
 - [ ] Add keyboard interrupts
+
+## Questions
+
+1.  `The CALL instruction doesn't allow you to pass any arguments. What are some ways to effectively get arguments to a subroutine?`
+      
+     Subroutines have Call and return functions. Cant pass args- call operation only tells it where to go. No returning values- only returns to the caller. Use STACK to store return value. Push to Stack, then changes at the PC to subroutine- adds to register- then run return instruction. Return POPS the value in the STACK and puts it in the program counter
+
+2.  `What's the result of bitwise-AND between`0b110`and`0b011`?`
+
+        Bitwise AND operator (&) compares each bit of the first operand to the corresponding bit of the second operand.
+        A bitwise AND takes two equal-length binary representations and performs the logical AND operation on each pair of the corresponding bits, which is equivalent to multiplying them.
+
+           0b110
+        & 0b011
+        ----------
+           0b010
+
+3)  `Convert the 8-bit binary number 0b11010 to hex.`
+
+        Start from the least significant bit (LSB) at the right of the binary number and divide it up into groups of 4 digits. …
+                0b1  1010
+
+        Convert each group of 4 binary digits to its equivalent hex value (see table above).
+
+                0b1 = 1 hex
+                1010 = A hex
+
+        Concatenate the results together, giving the total hex number.
+                1A
